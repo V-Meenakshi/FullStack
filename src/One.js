@@ -3,6 +3,7 @@ import Arraylist from "./Arraylist";
 import Info from "./Info";
 import Boolean from "./Boolean"
 import GetReview from "./GetReview";
+import Cards from "./Cards";
  export function One(){
     return(
         <div>
@@ -12,6 +13,7 @@ import GetReview from "./GetReview";
             <Arraylist />
             <Boolean />
             <GetReview />
+            <Cards />
         </div>
     );
 }
