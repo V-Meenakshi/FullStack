@@ -20,7 +20,8 @@ export default function CardsList(){
                                         program={name}
                                          col={branch} 
                                          userprop={obj} 
-                                         userFromArray={user} />))
+                                         userFromArray={user} 
+                                         />))
             }
         </div>
     );
