@@ -1,6 +1,9 @@
+
+
 export default function Cards(props){
     return(
         <div className="card" style={{width: "200"}}>
+            
             <img src="/profile.jpeg" width={100} style={{border: "3px solid black", borderRadius:"20px"}} alt={"profile"} />
             {/* <h2>{props.program}</h2>
             <p>{props.des}</p> */}

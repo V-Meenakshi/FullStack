@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Product from "./product";
+import Navigation from "./Navigation";
 
 export default function ProductList(){
     const[data,setData]=useState([]);
@@ -13,18 +14,22 @@ export default function ProductList(){
         fetchMyData();
     },[])
     return(
-        <div style={{display:"flex",flexWrap:"wrap"}}>
-            
-            {/* <Cards user={obj}/> 
-            {/* Declare property */}
-            {/* <Cards user={obj}/>
-            <Cards user={obj}/> */}
-            {
-            data.map((item,index) => (<Product key={index}
-                                         
-                                         userFromArray={item} 
-                                         />))
-            }
+        <div style={{display:"flex",flexDirection:"column"}}>
+            <Navigation/>
+            <div style={{display:"flex",flexWrap:"wrap",flexDirection:"row"}}>
+                
+                
+                {/* <Cards user={obj}/> 
+                {/* Declare property */}
+                {/* <Cards user={obj}/>
+                <Cards user={obj}/> */}
+                {
+                data.map((item,index) => (<Product key={index}
+                                            
+                                            userFromArray={item} 
+                                            />))
+                }
+            </div>
         </div>
     );
 }

@@ -1,4 +1,5 @@
-import { useState } from "react";
+import { useContext, useState } from "react";
+import { globalContext } from "./App";
 
 export default function Register(){
     const[collegeIdValue, setCollegeId]=useState("");
@@ -8,7 +9,7 @@ export default function Register(){
     const[yearValue,setYear]=useState("");
     const[genderValue,setGender]=useState("");
     const[user,setUser]=useState("");
-
+    const{globalObj,setGlobalObj}=useContext(globalContext);
     const getCollegeId=(event)=>{
         setCollegeId(event.target.value);
         console.log(event.target.value);
@@ -40,6 +41,14 @@ export default function Register(){
         }
         console.log(obj);
         setUser(obj);
+        setGlobalObj(obj);
+        setCollegeId(" ");
+        setBranch("");
+        setEmail(" ");
+        setGender("");
+        setYear("");
+        setPassword(" ");
+
         console.log(user);
     }
     

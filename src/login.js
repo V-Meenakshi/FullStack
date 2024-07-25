@@ -1,9 +1,11 @@
-import { useRef, useState ,useEffect} from "react";
+import { useContext,useRef, useState ,useEffect} from "react";
+import { CartContext } from "./Home";
 
 export default function Login(){
     const loginRef=useRef(null);
     const passwordRef=useRef(null);
     const[getInput,setInput] = useState("");
+    const {isLogin,setIsLogin} = useContext(CartContext);
 
     // use effect to focus on the input field
     useEffect(() =>{
@@ -19,6 +21,7 @@ export default function Login(){
         if(loginRef.current.value === passwordRef.current.value){
             console.log("Correct");
             setInput("correct");
+            setIsLogin(true);
             
 
         } 

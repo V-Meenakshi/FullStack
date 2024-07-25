@@ -1,4 +1,5 @@
 import Cards from "./Cards";
+import Navigation from "./Navigation";
 
 export default function CardsList(){
     const name="React";
@@ -10,6 +11,7 @@ export default function CardsList(){
     
     return(
         <div style={{display:"flex",flexWrap:"wrap"}}>
+            <Navigation/>
             
             {/* <Cards user={obj}/> 
             {/* Declare property */}
