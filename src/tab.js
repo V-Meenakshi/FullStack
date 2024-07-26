@@ -1,7 +1,7 @@
 import { useState } from "react";
 import Login from "./login";
 import Register from "./register";
-import Navigation from "./Navigation";
+// import Navigation from "./Navigation";
 
 export default function Tab(){
     const [getInput,setInput]=useState(true);
