@@ -6,19 +6,19 @@ import ProductList from "./productList";
 // import Info from "./Info";
 import Home from "./Home";
 import Profile from "./Profile";
-import Cart from "./Cart";
+// import Cart from "./Cart";
 export const globalContext = createContext();
 export default function App(){
     const[globalCount,setGlobalCount]=useState(0);
     const[globalObj,setGlobalObj]=useState({});
     const[globalIsLogin,setGlobalIsLogin] =useState(false);
-    const[globalListObj,setGlobalListObj]=useState([]);
+    // const[globalListObj,setGlobalListObj]=useState([]);
     // const[collegeIdValue, setCollegeId]=useState("");
     // const[passwordValue,setPassword]=useState("");
     
     return(
         <globalContext.Provider 
-        value={{globalCount,setGlobalCount,globalObj,setGlobalObj,globalIsLogin,setGlobalIsLogin,globalListObj,setGlobalListObj}}>
+        value={{globalCount,setGlobalCount,globalObj,setGlobalObj,globalIsLogin,setGlobalIsLogin}}>
             <BrowserRouter>
                 <Routes>
                     <Route path="/" element={<Home/>}/>
