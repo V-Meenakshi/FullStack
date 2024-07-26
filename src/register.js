@@ -14,7 +14,7 @@ export default function Register(){
     const[yearValue,setYear]=useState("");
     const[genderValue,setGender]=useState("");
     const[user,setUser]=useState("");
-    const{globalObj,setGlobalObj}=useContext(globalContext);
+    const{setGlobalObj}=useContext(globalContext);
     
     useEffect(() =>{
         // setCount(5);

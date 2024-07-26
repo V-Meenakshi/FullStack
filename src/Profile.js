@@ -1,12 +1,12 @@
 import { useContext, useState } from "react";
 import { globalContext } from "./App";
 import Navigation from "./Navigation";
-import Home from "./Home";
+// import Home from "./Home";
 
 export default function Profile(){
-    const {globalObj,setGlobalObj}=useContext(globalContext);
+    const {globalObj}=useContext(globalContext);
     const [showPassword, setShowPassword] = useState(false);
-    const {globalIsLogin,setGlobalIsLogin}=useContext(globalContext);
+    const {setGlobalIsLogin}=useContext(globalContext);
     const logoutAction=()=>{
         setGlobalIsLogin(false);
     }
