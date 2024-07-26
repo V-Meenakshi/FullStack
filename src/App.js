@@ -1,9 +1,9 @@
 import {BrowserRouter,Routes,Route} from "react-router-dom";
 import { createContext, useState } from "react";
-import Tab from "./tab";
-import CardsList from "./CardsList";
+// import Tab from "./tab";
+// import CardsList from "./CardsList";
 import ProductList from "./productList";
-import Info from "./Info";
+// import Info from "./Info";
 import Home from "./Home";
 import Profile from "./Profile";
 import Cart from "./Cart";

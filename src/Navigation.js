@@ -1,10 +1,10 @@
 import { useContext, useEffect } from "react";
 import { Link } from "react-router-dom";
-import { UserContext } from "./Home";
+// import { UserContext } from "./Home";
 import { globalContext } from "./App";
 export default function Navigation(){
-    const{globalCount,setGlobalCount}=useContext(globalContext);
-    const {globalIsLogin,setGlobalIsLogin}=useContext(globalContext);
+    const{globalCount}=useContext(globalContext);
+    const {setGlobalIsLogin}=useContext(globalContext);
     const logoutAction=()=>{
         setGlobalIsLogin(false);
     }

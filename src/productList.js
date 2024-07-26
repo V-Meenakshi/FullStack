@@ -1,19 +1,19 @@
-import { useContext, useEffect, useState } from "react";
+import {  useEffect, useState } from "react";
 import Product from "./product";
 import Navigation from "./Navigation";
-import { globalContext } from "./App";
+// import { globalContext } from "./App";
 
 export default function ProductList(){
     const[data,setData]=useState([]);
-    const{globalCount,setGlobalCount}=useContext(globalContext);
-    const{globalListObj,setGlobalListObj}=useContext(globalContext);
+    // const{globalCount,setGlobalCount}=useContext(globalContext);
+    // const{globalListObj,setGlobalListObj}=useContext(globalContext);
     useEffect(()=>{
         const fetchMyData = async ()=>{
             const res = await fetch("https://fakestoreapi.com/products");
             const resData=await res.json();
             setData(resData);
             console.log(resData);
-            setGlobalListObj(resData);
+            // setGlobalListObj(resData);
         }
         fetchMyData();
     },[])

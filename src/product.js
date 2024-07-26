@@ -1,9 +1,9 @@
-import { useContext } from "react";
+// import { useContext } from "react";
 import Nine from "./Nine";
-import { globalContext } from "./App";
+// import { globalContext } from "./App";
 
 export default function Product(props){
-    const {globalCount,setGlobalCount}=useContext(globalContext);
+    // const {globalCount,setGlobalCount}=useContext(globalContext);
     return(
         <div className="card" style={{width: "20rem" ,margin:"40"}}>
         <img src={props.userFromArray.image} width={250} height={250} alt={"profile"} />

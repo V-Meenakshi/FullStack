@@ -6,12 +6,12 @@ export default function Login(){
     const loginRef=useRef(null);
     const passwordRef=useRef(null);
     const[getInput,setInput] = useState("");
-    const{globalIsLogin,setGlobalIsLogin}=useContext(globalContext);
+    const{setGlobalIsLogin}=useContext(globalContext);
     // const{collegeIdValue, setCollegeId}=useContext(globalContext);
     // const {passwordValue,setPassword}=useContext(globalContext);
-    const {globalObj,setGlobalObj}=useContext(globalContext);
-    const[loginCollegeId,setLoginCollegeId]=useState("");
-    const[loginPassword,setLoginPassword]=useState("");
+    // const {setGlobalObj}=useContext(globalContext);
+    // const[loginCollegeId,setLoginCollegeId]=useState("");
+    // const[loginPassword,setLoginPassword]=useState("");
     
     // const {isLogin,setIsLogin} = useContext(CartContext);
 
@@ -37,26 +37,26 @@ export default function Login(){
     const formSubmitted =(event)=>{
         event.preventDefault();
         console.log("Form Submitted!");
-        // if(loginRef.current.value === passwordRef.current.value){
-        //     console.log("Correct");
-        //     setInput("correct");
-        //     setGlobalIsLogin(true);
+        if(loginRef.current.value === passwordRef.current.value){
+            console.log("Correct");
+            setInput("correct");
+            setGlobalIsLogin(true);
             
 
-        // } 
-        // else{
-        //     console.log("Incorrect");
-        //     setInput("Incorrect");
-            
-        // }  
-        if(globalObj.collegeIdValue===loginRef.current.value && globalObj.passwordValue===passwordRef.current.value){
-            
-            setGlobalIsLogin(true);
-            setInput("Correct");
-        }
+        } 
         else{
+            console.log("Incorrect");
             setInput("Incorrect");
-        }
+            
+        }  
+        // if(globalObj.collegeIdValue===loginRef.current.value && globalObj.passwordValue===passwordRef.current.value){
+            
+        //     setGlobalIsLogin(true);
+        //     setInput("Correct");
+        // }
+        // else{
+        //     setInput("Incorrect");
+        // }
         
         
         
