@@ -1,15 +1,26 @@
-import { useContext, useState } from "react";
+import { useContext, useEffect, useRef, useState } from "react";
 import { globalContext } from "./App";
 
 export default function Register(){
     const[collegeIdValue, setCollegeId]=useState("");
+    
+    const collegeIdRef=useRef(null);
     const[passwordValue,setPassword]=useState("");
+    // const {passwordValue,setPassword}=useContext(globalContext);
+    const passwordRef = useRef(null);
     const[emailValue,setEmail]=useState("");
+    const emailRef = useRef(null);
     const[branchValue,setBranch]=useState("");
     const[yearValue,setYear]=useState("");
     const[genderValue,setGender]=useState("");
     const[user,setUser]=useState("");
     const{globalObj,setGlobalObj}=useContext(globalContext);
+    
+    useEffect(() =>{
+        // setCount(5);
+        collegeIdRef.current.focus();
+        
+    },[]);
     const getCollegeId=(event)=>{
         setCollegeId(event.target.value);
         console.log(event.target.value);
@@ -42,12 +53,15 @@ export default function Register(){
         console.log(obj);
         setUser(obj);
         setGlobalObj(obj);
-        setCollegeId(" ");
+        setCollegeId("");
         setBranch("");
-        setEmail(" ");
+        setEmail("");
         setGender("");
         setYear("");
-        setPassword(" ");
+        setPassword("");
+        collegeIdRef.current.value=("");
+        passwordRef.current.value=("");
+        emailRef.current.value=("");
 
         console.log(user);
     }
@@ -61,11 +75,11 @@ export default function Register(){
                 <form onSubmit={submitData}
                     style={{display:"flex",flexDirection:"column",gap:"10px"}}>
                     <label>College Id</label>
-                    <input type="text" placeholder="College Id" onChange={getCollegeId}/>
+                    <input type="text" placeholder="College Id" onChange={getCollegeId} ref={collegeIdRef}/>
                     <label>Password</label>
-                    <input type="password" placeholder="Password" onChange={getPassowrd}/>
+                    <input type="password" placeholder="Password" onChange={getPassowrd} ref={passwordRef}/>
                     <label>Email address</label>
-                    <input type="text" placeholder="Email address" onChange={getEmail}/>
+                    <input type="text" placeholder="Email address" onChange={getEmail} ref={emailRef}/>
                     <label>Branch</label>
                     <select className="form-select form-select-sm" ariaLabel="Small select example" onChange={getBranch} value={branchValue}>
                         <option value="">Select a branch</option>

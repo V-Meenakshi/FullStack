@@ -1,10 +1,15 @@
 import { useContext, useState } from "react";
 import { globalContext } from "./App";
 import Navigation from "./Navigation";
+import Home from "./Home";
 
 export default function Profile(){
     const {globalObj,setGlobalObj}=useContext(globalContext);
     const [showPassword, setShowPassword] = useState(false);
+    const {globalIsLogin,setGlobalIsLogin}=useContext(globalContext);
+    const logoutAction=()=>{
+        setGlobalIsLogin(false);
+    }
 
     const togglePasswordVisibility = () => {
         setShowPassword(!showPassword);
@@ -12,7 +17,7 @@ export default function Profile(){
     return(
         <div style={{display:"flex",flexDirection:"column"}}>
             <Navigation/>
-            <div className="container" style={{display:"flex",justifyContent:"center"}}>    
+            <div className="container" style={{display:"flex",justifyContent:"center",gap:"20px",flexDirection:"column",width:"400px",padding:"20px"}}>    
                 <div className="card" style={{width:"300" ,display:"flex",flexDirection:"column",padding:"15px"}}>
                 <h1>Profile</h1>
                 <p style={{marginBottom:"10"}}>Your details</p>
@@ -35,6 +40,7 @@ export default function Profile(){
                         <h6>{globalObj.yearValue}</h6>
                         <p>Gender</p>
                         <h6>{globalObj.genderValue}</h6>
+                        <button className="btn btn-dark" onClick={logoutAction}>Logout</button>
                     </div>
                 </div>
             </div>
