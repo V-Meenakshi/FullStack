@@ -24,7 +24,7 @@ export default function App(){
                     <Route path="/" element={<Home/>}/>
                     <Route path="/products" element={<ProductList />}/>
                     <Route path="/profile" element={<Profile/>}/>
-                    <Route path="/cart" element={<Cart/>}/>
+                    {/* <Route path="/cart" element={<Cart/>}/> */}
                     
                 </Routes>
             </BrowserRouter>
